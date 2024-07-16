@@ -4,7 +4,7 @@
 # Затем в консоль вводится строка с товарами, которые есть на складе:
 # ХЛЕБ, яйца, колбаСа.
 # Программа должна проверить наличие товара на скалде и вывести информацию в консоль (формат вывода произвольный).
-# 
+#
 # Пример вывода:
 # Нужно: молоко, ХлеБ, КолбаСА, ЯЙцА
 # Склад: ХЛЕБ, яйца, колбаСа
@@ -13,15 +13,13 @@
 # <Колбаса> на складе: [Да]
 # <Яйца> на складе: [Да]
 
-setNeed = ("молоко", "ХлеБ", "КолбаСА", "ЯЙцА")
-print("Need:", ", ".join(i for i in setNeed))
+listNeed = input("Enter a list of needed products separated by commas: ").split(",")
+setNeed = set(i.strip().lower() for i in listNeed)
 
-setStore = ("ХЛЕБ", "яйца", "колбаСа")
-print("Store:", ", ".join(i for i in setStore))
+listStore = input("Enter a list of products on the store separated by commas: ").split(",")
+setStore = set(i.strip().lower() for i in listStore)
 
-setStore = set(i.lower() for i in setStore)
-
-d = {i.capitalize(): "Yes" if i.lower() in setStore else "No" for i in setNeed}
+d = {i.strip().capitalize(): "Yes" if i.lower() in setStore else "No" for i in setNeed}
 
 for k, v in d.items():
     print(f"<{k}> on the store: [{v}]")
