@@ -10,7 +10,7 @@
 
 import os
 
-target_path = input("Enter target path where you will create new folder <for example, D:\\Academy_Shag\\Python>: ")
+target_path = input("Enter target path where you will create new folder < for example, D:\\Academy_Shag\\Python >: ")   # D:\Academy_Shag\Python
 new_folder = input("Enter name for new folder: ")  # my_path = "Julia Petrenko"
 file_count = int(input("How much files do you want to create: "))  # __task_09
 file_name_pattern = input("Enter file name pattern: ")
