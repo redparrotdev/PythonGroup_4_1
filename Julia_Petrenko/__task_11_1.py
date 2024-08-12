@@ -3,6 +3,7 @@ class Animal:
     def speek(self):
         return "No sound"
 
+# Для каждого дочернего класса перезапишите метод speek(), чтобы он возвращал подходящий по имени класса звук животного.
 
 class Cat(Animal):
     def speek(self):
