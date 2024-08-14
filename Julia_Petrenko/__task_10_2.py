@@ -11,6 +11,11 @@ class Page:
     def content(self):
         return self.__text
 
+    @staticmethod
+    def from_book(book: "Book", page_num: int):
+        text = Book.get_page(book, page_num)
+        return Page(text)
+
 
 class Book:
 
@@ -22,26 +27,24 @@ class Book:
         return "\n".join(self.__content)
 
     def get_page(self, page_num: int):
-        if 0 <= abs(page_num) <= self.pages:
-            return self.__content[page_num]
+        if 0 <= page_num <= self.pages:
+            return self.__content[page_num - 1]
 
     @staticmethod
     def from_page(page: Page):
         return Book([page.content])
 
-    def from_book(self, page_num: int):
-        return Page(self.get_page(page_num))
 
+page1 = Page("Single page")
+print(page1.content)
 
-Page1 = Page("Single page")
-# print(Page1.content)
+book1 = Book(["First page", "Second page", "Third page"])
+print(book1.read())
 
-Book1 = Book(["First page", "Second page", "Third page"])
-# print(Book1.read())
+page2 = Page.from_book(book1, 2)
+print(page2.content)
 
-Book2 = Book.from_page(Page1)
-# print(Book2.read())
+book2 = Book.from_page(page1)
+print(book2.read())
 
-Page2 = Book1.from_book(1)
-print(Page2.content)
 
