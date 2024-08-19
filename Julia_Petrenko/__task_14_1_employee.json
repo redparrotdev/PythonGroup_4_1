@@ -1,0 +1,14 @@
+[
+  {
+    "Id": 1,
+    "Name": "Roman",
+    "Role": "Admin",
+    "WorkRemote": false
+  },
+  {
+    "Id": 2,
+    "Name": "Stepan",
+    "Role": "Engineer",
+    "WorkRemote": true
+  }
+]
